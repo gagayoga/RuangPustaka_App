@@ -89,14 +89,27 @@ class ProfileView extends GetView<ProfileController> {
                                   fontWeight: FontWeight.w700,
                                   color: AppColors.blackColor
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
                     )
                 ],
                 ),
-              )
+              ),
+
+              const Divider(
+                color: AppColors.backgroundOnboarding,
+                height: 2,
+              ),
+
+              const SizedBox(height: 20),
+
+              sectionButtonProfile(sizes.sizeWidth, sizes.sizeWidth, Iconsax.information5, "Profile User", (){}),
+
+              const SizedBox(height: 10),
+
+              sectionButtonProfile(sizes.sizeWidth, sizes.sizeWidth, Iconsax.logout5, "Logout",(){controller.logout();}),
             ],
           ),
         ),
@@ -104,18 +117,29 @@ class ProfileView extends GetView<ProfileController> {
     );
   }
 
-  Widget sectionButtonProfile(double width, double height, IconData iconDepan, String text){
+  Widget sectionButtonProfile(double width, double height, IconData iconDepan, String text, Function() onTap){
     return Container(
       width: width,
       height: 50,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: AppColors.backgroundOnboarding.withOpacity(0.60),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: Row(
-          children: [
-            Icon(iconDepan),
-            Text(),
-            Icon(),
-          ],
+        child: InkWell(
+          onTap: onTap,
+          child: Row(
+            children: [
+              Icon(iconDepan),
+              const SizedBox(width: 10),
+              Text(text, style: GoogleFonts.montserrat(
+                fontSize: AppTextSizes.body,
+                fontWeight: FontWeight.w600,
+                color: AppColors.primaryColor
+              ),),
+            ],
+          ),
         ),
       ),
     );

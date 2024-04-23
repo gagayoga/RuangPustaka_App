@@ -172,7 +172,7 @@ class DetailbookController extends GetxController with StateMixin{
       );
 
       if (responsePostPeminjaman.statusCode == 201) {
-        CustomToast.ShowToast("Buku berhasil dipinjam", AppColors.blackColor, AppColors.whiteColor);
+        CustomToast.ShowToast("Buku berhasil dipinjam", AppColors.blackColor, AppColors.whiteColor);q
       } else {
         CustomToast.ShowToast("Buku gagal dipinjam, silakan coba kembali", AppColors.blackColor, AppColors.whiteColor);
       }

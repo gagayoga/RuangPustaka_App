@@ -5,6 +5,7 @@ import 'package:ruangpustaka/app/modules/buktipeminjaman/controllers/buktipeminj
 import 'package:ruangpustaka/app/modules/menu/bookmarks/controllers/bookmarks_controller.dart';
 import 'package:ruangpustaka/app/modules/menu/historypeminjaman/controllers/historypeminjaman_controller.dart';
 import 'package:ruangpustaka/app/modules/menu/home/controllers/home_controller.dart';
+import 'package:ruangpustaka/app/modules/menu/profile/controllers/profile_controller.dart';
 import 'package:ruangpustaka/app/modules/menu/ruangpustakapage/controllers/ruangpustakapage_controller.dart';
 
 import '../controllers/dashboard_controller.dart';
@@ -30,6 +31,10 @@ class DashboardBinding extends Bindings {
 
     Get.lazyPut<HistorypeminjamanController>(
           () => HistorypeminjamanController(),
+    );
+
+    Get.lazyPut<ProfileController>(
+          () => ProfileController(),
     );
   }
 }

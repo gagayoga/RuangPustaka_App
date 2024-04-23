@@ -210,7 +210,7 @@ class HistorypeminjamanView extends GetView<HistorypeminjamanController> {
                               child: InkWell(
                                 onTap: (){
                                   if(dataKoleksi.status == "Selesai"){
-
+                                    controller.kontenBeriUlasan(dataKoleksi.bukuId.toString(), dataKoleksi.judulBuku.toString());
                                   }else{
                                     Get.toNamed(Routes.BUKTIPEMINJAMAN, parameters: {
                                       'idPeminjaman': dataKoleksi.peminjamanID.toString(),
